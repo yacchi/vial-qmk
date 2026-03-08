@@ -1,0 +1,113 @@
+:root {
+  --bg: #1a1a2e;
+  --surface: #16213e;
+  --primary: #0f3460;
+  --accent: #e94560;
+  --text: #eee;
+  --text-muted: #888;
+  --success: #4ecca3;
+  --error: #e94560;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+#app {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--primary);
+  margin-bottom: 1.5rem;
+}
+
+h1 { font-size: 1.4rem; }
+h2 {
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+  color: var(--text-muted);
+}
+
+.status {
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+.status.connected { background: var(--success); color: #000; }
+.status.disconnected { background: var(--error); color: #fff; }
+
+section {
+  background: var(--surface);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+button {
+  background: var(--primary);
+  color: var(--text);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: opacity 0.2s;
+}
+button:hover { opacity: 0.85; }
+button.active {
+  background: var(--accent);
+}
+
+.actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+#layer-buttons {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.radio-group {
+  display: flex;
+  gap: 1rem;
+}
+.radio-group label {
+  cursor: pointer;
+}
+
+#device-info p {
+  margin: 0.25rem 0;
+  font-size: 0.9rem;
+}
+#device-info span {
+  font-weight: 600;
+  color: var(--success);
+}
+
+#profile-list, #app-rules {
+  margin: 0.5rem 0;
+}
+
+input[type="checkbox"] {
+  margin-right: 0.5rem;
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KQB Companion</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <h1>KQB Companion</h1>
+        <div id="connection-status" class="status disconnected">Disconnected</div>
+      </header>
+
+      <main>
+        <section id="device-section">
+          <h2>Device</h2>
+          <div id="device-info">
+            <p>Layer Count: <span id="layer-count">-</span></p>
+            <p>Default Layer: <span id="default-layer">-</span></p>
+            <p>Active Layers: <span id="active-layers">-</span></p>
+            <p>OS Override: <span id="os-override">-</span></p>
+          </div>
+          <div class="actions">
+            <button id="btn-connect">Connect</button>
+            <button id="btn-refresh">Refresh Status</button>
+            <button id="btn-open-vial">Open Vial</button>
+          </div>
+        </section>
+
+        <section id="layer-section">
+          <h2>Layer Control</h2>
+          <div id="layer-buttons"></div>
+        </section>
+
+        <section id="override-section">
+          <h2>OS Key Override</h2>
+          <div class="radio-group">
+            <label><input type="radio" name="os-override" value="0" checked /> Disable</label>
+            <label><input type="radio" name="os-override" value="1" /> US Key on JP OS</label>
+            <label><input type="radio" name="os-override" value="2" /> JP Key on US OS</label>
+          </div>
+        </section>
+
+        <section id="profile-section">
+          <h2>Profiles</h2>
+          <div id="profile-list"></div>
+          <div class="actions">
+            <button id="btn-add-profile">Add Profile</button>
+          </div>
+        </section>
+
+        <section id="auto-switch-section">
+          <h2>Auto Switch</h2>
+          <p>Current App: <span id="current-app">-</span></p>
+          <label>
+            <input type="checkbox" id="auto-switch-enabled" />
+            Enable auto layer switch by application
+          </label>
+          <div id="app-rules"></div>
+        </section>
+      </main>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

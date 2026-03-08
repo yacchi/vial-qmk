@@ -4,6 +4,7 @@
 #include "raw_hid.h"
 #include "via.h"
 #include "vial.h"
+#include "companion.h"
 
 extern void raw_hid_receive_vial(uint8_t *data, uint8_t length);
 extern void raw_hid_receive_qmk(uint8_t *data, uint8_t length);
@@ -40,6 +41,11 @@ static bool pre_raw_hid_receive(uint8_t *msg, uint8_t len) {
 }
 
 void raw_hid_receive(uint8_t *data, uint8_t length) {
+    // Try companion app protocol first (0x20-0x2F)
+    if (companion_raw_hid_receive(data, length)) {
+        return;
+    }
+
     if (pre_raw_hid_receive(data, length)) {
         if (is_vial_enabled) {
             raw_hid_receive_vial(data, length);

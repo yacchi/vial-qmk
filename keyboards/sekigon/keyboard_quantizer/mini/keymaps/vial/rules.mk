@@ -2,7 +2,7 @@ VIA_ENABLE = yes
 VIAL_ENABLE = yes
 VIAL_INSECURE = yes
 
-SRC += quantizer_mouse.c raw_hid.c
+SRC += quantizer_mouse.c raw_hid.c companion.c
 
 include keyboards/sekigon/keyboard_quantizer/mini/keymaps/vial/cli/rules.mk
 include keyboards/sekigon/keyboard_quantizer/mini/keymaps/vial/key_override/rules.mk
